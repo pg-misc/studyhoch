@@ -41,7 +41,7 @@ with open('index.html', 'w') as index:
                 c = c + 1
                 h, t = v
                 with open('lesson_{}/{}.html'.format(count, c), 'w') as out:
-                    print('<!doctype html>\n<html lang="en">\n<head>\n<meta charset="UTF-8">\n<title>Lesson {} #{}</title>\n<link rel="stylesheet" href="../style.css">\n<script src="http://code.jquery.com/jquery-latest.min.js"></script>\n<script src="../app.js"></script>\n</head>\n<body>'.format(count, c), file=out)
+                    print('<!doctype html>\n<html lang="en">\n<head>\n<meta charset="UTF-8">\n<title>Lesson {} #{}</title>\n<link rel="stylesheet" href="../style.css">\n<script src="https://code.jquery.com/jquery-latest.min.js"></script>\n<script src="../app.js"></script>\n</head>\n<body>'.format(count, c), file=out)
                     print('<h4>\nSpace bar = flip flashcard<br/>\nRight arrow key = next flashcard<br/>\nLeft arrow key = previous flashcard<br/>\nDelete/backspace = restart lesson<br/>\nEscape = return to list of lessons</h4>', file=out)
                     print('<div class="stage">\n<div class="flashcard">\n<div class="front">', file=out)
                     imgurl = h('div.image')('img').attr('src')
