@@ -21,7 +21,7 @@ with open('index.html', 'w') as index:
     print('<a href="full_list.html">Full List of Terms</a>\n<br/>', file=index)
     with open('full_list.html', 'w') as full_list:
         print('<!doctype html>\n<html lang="en">\n<head>\n<meta charset="UTF-8">\n<title>Full Term List</title>\n</head>\n<body>', file=full_list)
-        print('<h4>For "typable transliterations", all accents are stripped. "ꜥ" is transliterated to "a" and "ꜣ" is transliterated to "3"</h4>\n</br>', file=full_list)
+        print('<h4>For "typable transliterations," all accents are stripped.<br/>\nꜥ = a<br/>\nꜣ = 3<br/>\nṯ = t<br/>\nḥ = h<br/>\nḫ = h<br/>\nẖ = h<br/>\nš = s<br/>\nḏ = d</h4>\n</br>', file=full_list)
         for i in range(1, 23, 2):
             count += 1
             print('<a href="lesson_{}/1.html">Lesson {}</a>\n<br/>'.format(count, count), file=index)
