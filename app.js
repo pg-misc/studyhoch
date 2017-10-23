@@ -20,6 +20,9 @@ $(document).keydown(function(e){
         window.location.href = $("#restart").attr('href');
     }
     else if (e.which == 27){
-        window.location.href = "index.html";
+        if ($("#index").attr('href'))
+            window.location.href = $("#index").attr('href');
+        else
+            window.location.href = "index.html";
     }
 });
