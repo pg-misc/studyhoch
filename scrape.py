@@ -20,7 +20,7 @@ with open('index.html', 'w') as index:
     print('<h3><u>Flashcard Instructions</u></h3><h4>Space bar = flip flashcard<br/>\nRight arrow key = next flashcard<br/>\nLeft arrow key = previous flashcard<br/>\nDelete/backspace = restart lesson<br/>\nEscape = return to list of lessons</h4>', file=index)
     print('<a href="full_list.html">Full List of Terms</a>\n<br/>', file=index)
     with open('full_list.html', 'w') as full_list:
-        print('<!doctype html>\n<html lang="en">\n<head>\n<meta charset="UTF-8">\n<title>Full Term List</title>\n</head>\n<body>', file=full_list)
+        print('<!doctype html>\n<html lang="en">\n<head>\n<meta charset="UTF-8">\n<title>Full Term List</title>\n<script src="https://code.jquery.com/jquery-latest.min.js"></script>\n<script src="app.js"></script>\n</head>\n<body>', file=full_list)
         print('<h4>For "typable transliterations," all accents are stripped.<br/>\nꜣ = 3<br/>\nꜥ = a<br/>\nḥ = h<br/>\nḫ = h<br/>\nẖ = h<br/>\nš = s<br/>\nṯ = t<br/>\nḏ = d</h4>\n</br>', file=full_list)
         for i in range(1, 23, 2):
             count += 1
@@ -78,7 +78,7 @@ with open('index.html', 'w') as index:
                     print('<br/>\n<a id="restart" href="1.html">Start Lesson Over</a>', file=out)
                     print('<br/>\n<a id="index" href="../index.html">All Lessons</a>'.format(c - 1), file=out)
                     print('</body>\n</html>', file=out)
-        print('<br/><p>Flashcard HTML/CSS/JavaScript slightly modified from <a href="http://codrspace.com/kara/implementing-flashcard-flip-with-css3-transitions/">http://codrspace.com/kara/implementing-flashcard-flip-with-css3-transitions/</a></p>', file=index)
+        print('<br/><p>Flashcard HTML/CSS/JavaScript adapted from <a href="http://codrspace.com/kara/implementing-flashcard-flip-with-css3-transitions/">http://codrspace.com/kara/implementing-flashcard-flip-with-css3-transitions/</a></p>', file=index)
         print('<br/><p>Vocabulary scraped from <a href="https://www.memrise.com/course/771953/middle-egyptian-hoch-hieroglyphs/">memrise</a></p>', file=index)
         print('</body>\n</html>', file=index)
         print('</body>\n</html>', file=full_list)
