@@ -43,7 +43,7 @@ with open('index.html', 'w') as index:
                 with open('lesson_{}/{}.html'.format(count, c), 'w') as out:
                     print('<!doctype html>\n<html lang="en">\n<head>\n<meta charset="UTF-8">\n<title>Lesson {} #{}</title>\n<link rel="stylesheet" href="../style.css">\n<script src="https://code.jquery.com/jquery-latest.min.js"></script>\n<script src="../app.js"></script>\n</head>\n<body>'.format(count, c), file=out)
                     print('<h4>\nSpace bar = flip flashcard<br/>\nRight arrow key = next flashcard<br/>\nLeft arrow key = previous flashcard<br/>\nDelete/backspace = restart lesson<br/>\nEscape = return to list of lessons</h4>', file=out)
-                    print('<div class="stage">\n<div class="flashcard">\n<div class="front">', file=out)
+                    print('<div class="stage">\n<div class="flashcard">\n<div class="front"><p>', file=out)
                     imgurl = h('div.image')('img').attr('src')
                     if not os.path.exists('lesson_{}/images'.format(count)):
                         os.makedirs('lesson_{}/images'.format(count))
@@ -54,7 +54,7 @@ with open('index.html', 'w') as index:
                     print('<img src="../{}">'.format(imgloc), file=out)
                     print('<img src="{}">'.format(imgloc), file=full_list)
                     print('<br/>', file=full_list)
-                    print('</div>\n<div class="back">', file=out)
+                    print('</p></div>\n<div class="back"><p>', file=out)
                     print('<strong>Transliteration: </strong>', file=out)
                     print(t('div.col_a.col.text').text(), file=out)
                     print('<strong>Transliteration: </strong>', file=full_list)
@@ -68,7 +68,7 @@ with open('index.html', 'w') as index:
                     print(h.text(), file=out)
                     print('<strong>Definition: </strong>', file=full_list)
                     print(h.text(), file=full_list)
-                    print('</div>\n</div>\n</div>', file=out)
+                    print('</p>\n</div>\n</div>\n</div>', file=out)
                     print('<br/>', file=full_list)
                     print('<hr>', file=full_list)
                     if c != len(vocab):
