@@ -70,7 +70,7 @@ with open('index.html', 'w') as index:
                     print(h.text(), file=full_list)
                     print('</div>\n</div>\n</div>', file=out)
                     print('<br/>', file=full_list)
-                    print('<br/>', file=full_list)
+                    print('<hr>', file=full_list)
                     if c != len(vocab):
                         print('<br/>\n<a id="next" href="{}.html">Next Card</a>'.format(c + 1), file=out)
                     if c != 1:
