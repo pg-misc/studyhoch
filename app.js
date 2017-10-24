@@ -7,17 +7,17 @@ $(document).ready(function() {
 $(document).keydown(function(e){
     if (e.which == 39){
         if ($("#next").attr('href'))
-            window.location.href = $("#next").attr('href');
+            window.location.href = window.location.href.substring(0, window.location.href.lastIndexOf("/")) + "/" + $("#next").attr('href');
     }
     else if (e.which == 37){
         if ($("#previous").attr('href'))
-            window.location.href = $("#previous").attr('href');
+            window.location.href = window.location.href.substring(0, window.location.href.lastIndexOf("/")) + "/" + $("#previous").attr('href');
     }
     else if (e.which == 32 || e.which == 13){
         $('.flashcard').toggleClass('flipped');
     }
     else if (e.which == 8 || e.which == 46){
-        window.location.href = $("#restart").attr('href');
+        window.location.href = window.location.href.substring(0, window.location.href.lastIndexOf("/")) + "/" + $("#restart").attr('href');
     }
     else if (e.which == 27){
         if ($("#index").attr('href'))
