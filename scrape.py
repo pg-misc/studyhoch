@@ -24,6 +24,7 @@ with open('index.html', 'w') as index:
         print('<h4>For "typable transliterations," all accents are stripped.<br/>\nꜣ = 3<br/>\nꜥ = a<br/>\nḥ = h<br/>\nḫ = h<br/>\nẖ = h<br/>\nš = s<br/>\nṯ = t<br/>\nḏ = d</h4>\n</br>', file=full_list)
         for i in range(1, 23, 2):
             count += 1
+            print('<hr><h3>Lesson {}</h3><hr>'.format(count), file=full_list)
             print('<a href="lesson_{}/1.html">Lesson {}</a>\n<br/>'.format(count, count), file=index)
             if not os.path.exists('lesson_{}'.format(count)):
                 os.makedirs('lesson_{}'.format(count))
