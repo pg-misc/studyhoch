@@ -56,7 +56,8 @@ with open('index.html', 'w') as index:
         count += 1
         print('<a href="lesson_{}/1.html">Lesson {}</a>\n<br/>'.format(count, count), file=index)
 
-        for c in range(len([img for img in os.listdir('lesson_{}/hieroglyphs'.format(count)) if img.split('.')[-1] == 'png'])):
+        lst = [img for img in os.listdir('lesson_{}/hieroglyphs'.format(count)) if img.split('.')[-1] == 'png']
+        for c in range(len(lst)):
             c = c + 1
             h, t = v
             with open('lesson_{}/{}.html'.format(count, c), 'w') as out:
@@ -68,7 +69,7 @@ with open('index.html', 'w') as index:
                 print('</p></div>\n<div class="back"><p>', file=out)
                 print('<img src="../{}" style="max-width:100%;max-height:100%;">'.format('lesson_{}/translations/{}.png'.format(count, c)), file=out)
                 print('</p>\n</div>\n</div>\n</div>', file=out)
-                if c != len(vocab):
+                if c != len(lst):
                     print('<br/>\n<a id="next" href="{}.html">Next Card</a>'.format(c + 1), file=out)
                 if c != 1:
                     print('<br/>\n<a id="previous" href="{}.html">Previous Card</a>'.format(c - 1), file=out)
